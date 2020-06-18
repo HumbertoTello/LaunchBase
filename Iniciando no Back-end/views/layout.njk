@@ -1,0 +1,23 @@
+<!DOCTYPE html> <!-- HTML 5 -->
+<html> <!-- HTML root -->
+  <head> <!-- Collection of instructions to browser -->
+
+    {% block head %}
+      <title>Mayk Britto</title> <!-- Name the tab -->
+    {% endblock %}
+
+    <link rel="stylesheet" href="/styles.css">
+
+  </head>
+
+  <body> <!-- Content of page -->
+    <header> <!-- Start of the page -->
+      <div class="links">
+        <a href="/">Sobre</a>
+        <a href="/portfolio">Aulas</a>
+      </div>
+    </header>
+
+    {% block content %}{% endblock %}
+  </body>
+</html>
