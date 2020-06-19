@@ -8,25 +8,24 @@
     <section class="content">
 
       <div id="wrapper">
-        <img src="https://rocketseat.gallerycdn.vsassets.io/extensions/rocketseat/rocketseatreactnative/3.0.1/1588456740326/Microsoft.VisualStudio.Services.Icons.Default" alt="Rocketseat logo">
-        <h1>Rocketseat</h1>
-        <h2>As melhores tecnologias em programação, direto ao ponto e do jeito certo.</h2>
-        <h3>Tecnologias utilizadas</h3>
+        <img src="{{ info.img_url }}" alt="Rocketseat logo">
+        <h1>{{ info.name }}</h1>
+        <h2>{{ info.description }}</h2>
+        <h3>{{ info.technologies_title }}</h3>
       </div>
 
       <div id="technologies">
         <ul>
-          <li>JavaScript</li>
-          <li>ReactJS</li>
-          <li>NodeJS</li>
-          <li>React Native</li>
+          {% for technologie in info.technologies_names %}
+            <li>{{ technologie }}</li>
+          {% endfor %}
         </ul>
       </div>
 
       <div class="links" id="footer">
-        <a href="https://github.com/rocketseat">Github</a>
-        <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br">Instagram</a>
-        <a href="https://www.facebook.com/rocketseat/">Facebook</a>
+        {% for link in info.links %}
+          <a href="{{ link.url }}">{{ link.name }}</a>
+        {% endfor %}
       </div>
 
     </section>

@@ -7,49 +7,25 @@
 
 {% block content%}
   <div class="course">
-
-    <div class="card" id="starter">
-      <div class="course-img">
-        <img src="https://skylab.rocketseat.com.br/static/media/Starter.64c237cc.svg" alt="Starter">
+    {% for card in cards %}
+      <div class="card" id="{{ card.id }}">
+        <div class="course-img">
+          <img src="{{ card.img }}" alt="{{ card.id }}">
+        </div>
+        <div class="course-modules">
+          <p>{{ card.modules }}</p>
+        </div>
+        <div class="disponibility">
+          <p>{{ card.price }}</p>
+        </div>
       </div>
-      <div class="course-modules">
-        <p>Módulos: 50</p>
-      </div>
-      <div class="disponibility">
-        <p>Gratuito</p>
-      </div>
-    </div>
-
-    <div class="card" id="launchbase">
-      <div class="course-img">
-        <img src="https://skylab.rocketseat.com.br/static/media/LaunchBase.08285320.svg" alt="LaunchBase">
-      </div>
-      <div class="course-modules">
-        <p>Módulos: 100+</p>
-      </div>
-      <div class="disponibility">
-        <p>Pago</p>
-      </div>
-    </div>
-
-    <div class="card" id="gostack">
-      <div class="course-img">
-        <img src="https://skylab.rocketseat.com.br/static/media/GoStack.83a178a0.svg" alt="GoStack">
-      </div>
-      <div class="course-modules">
-        <p>Módulos: 100+</p>
-      </div>
-      <div class="disponibility">
-        <p>Pago</p>
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
 
   <div class="links" id="footer">
-    <a href="https://github.com/rocketseat">Github</a>
-    <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br">Instagram</a>
-    <a href="https://www.facebook.com/rocketseat/">Facebook</a>
+    {% for link in info.links %}
+      <a href="{{ link.url }}">{{ link.name }}</a>
+    {% endfor %}
   </div>
 
   <div class="modal-overlay maximize">
