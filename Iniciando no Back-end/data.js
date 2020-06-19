@@ -3,7 +3,8 @@ module.exports = [
     id: "2alg7MQ6_sI",
     title: "Git e Github na prática",
     duration: "33 min",
-    price: "Free"
+    price: "Free",
+    featured: true
   },
   {
     id: "x4FdZd2-_uU",
@@ -15,7 +16,8 @@ module.exports = [
     id: "GTMEuHxh8aQ",
     title: "Validação de forms customizada com HTML e JavaScript",
     duration: "1 h 31 min",
-    price: "Free"
+    price: "Free",
+    featured: true
   },
   {
     id: "EhnXaybirdA",
@@ -27,7 +29,8 @@ module.exports = [
     id: "u99tNt3TZf8",
     title: "Desvendando Redux na Prática",
     duration: "50 min",
-    price: "Free"
+    price: "Free",
+    featured: true
   },
   {
     id: "HN1UjzRSdBk",
