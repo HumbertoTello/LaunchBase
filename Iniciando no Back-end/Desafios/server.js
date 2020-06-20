@@ -8,7 +8,9 @@ server.use(express.static('public'))
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-  express: server
+  express: server,
+  autoescape: false,
+  noCache: true
 })
 
 server.get("/", function (req, res) {
@@ -43,9 +45,24 @@ server.get("/courses", function (req,res) {
   return res.render("courses", { cards, info })
 })
 
+server.get("/courses/:id", function(req, res) {
+  const id = req.params.id;
+
+  const card = cards.find(function(card) {
+    return card.id == id
+  })
+
+  if(!card) {
+    return res.send("Video not found!")
+  }
+
+  return res.render("video", { card })
+});
+
 server.get("/notfound", function (req,res) {
   return res.render("not-found")
 })
+
 
 server.use(function(req, res) {
   res.status(404).render("not-found");

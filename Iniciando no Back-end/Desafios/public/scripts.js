@@ -5,8 +5,7 @@ var courseId = ""
 for (let card of cards) {
   card.addEventListener("click", function() {
     courseId = card.getAttribute("id")
-    modal.classList.add("active")
-    modal.querySelector("iframe").src=`https://rocketseat.com.br/${courseId}`
+    window.location.href = `/courses/${courseId}`
   })
 }
 

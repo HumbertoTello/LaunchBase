@@ -1,0 +1,26 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/courses.css">
+{% endblock %}
+
+{% block content%}
+  <div class="course-alone">
+      <div class="card" id="{{ card.id }}">
+        <div class="course-img">
+          <img src="{{ card.img }}" alt="{{ card.id }}">
+        </div>
+        <div class="course-modules">
+          <p>{{ card.modules }}</p>
+        </div>
+        <div class="disponibility">
+          <p>{{ card.price }}</p>
+        </div>
+      </div>
+
+      <div class="course-alone__description">
+        <h2>{{ card.description }}</h2>
+      </div>
+  </div>
+{% endblock %}
