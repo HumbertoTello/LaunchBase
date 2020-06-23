@@ -2,35 +2,30 @@
   "instructors": [
     {
       "avatar_url": "http://a",
-      "name": "a",
-      "birth": "1992-09-02",
-      "gender": "F",
-      "services": "a",
-      "created_at": 1592940871605
-    },
-    {
-      "avatar_url": "http://a",
-      "name": "a",
-      "birth": 1591142400000,
+      "birth": 1593043200000,
+      "created_at": 1592943094117,
+      "id": 1,
       "gender": "M",
       "services": "a",
-      "created_at": 1592941152293
+      "name": "a"
     },
     {
       "avatar_url": "http://a",
-      "name": "a",
-      "birth": 1591747200000,
+      "birth": 1593043200000,
+      "created_at": 1592943169057,
+      "id": 2,
       "gender": "M",
       "services": "a",
-      "created_at": 1592941196052
+      "name": "a"
     },
     {
+      "id": 3,
       "avatar_url": "http://a",
       "name": "a",
-      "birth": 1591833600000,
+      "birth": 1593648000000,
       "gender": "F",
       "services": "a",
-      "created_at": 1592941314358
+      "created_at": 1592943323186
     }
   ]
 }
