@@ -19,7 +19,10 @@ exports.post = function(req,res) {
     }
   }
   
-  // []
+  req.body.birth = Date.parse(req.body.birth)
+  req.body.created_at = Date.now()
+
+  // [{...}]
   data.instructors.push(req.body) // [{...}, {...}]
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
@@ -27,7 +30,7 @@ exports.post = function(req,res) {
       return res.send("Write file error")
     }
 
-    return res.redirect("/instructors")
+    return res.redirect('/instructors')
   })
 
   // return res.send(req.body)
