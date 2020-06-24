@@ -90,6 +90,11 @@ header {
   padding: 16px 0;
 }
 
+.details .item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+}
+
 .details .item:nth-child(2) {
   border: none;
 }
@@ -125,5 +130,28 @@ header {
   margin-right: 4px;
   margin-top: 8px;
   display: inline-block;
+  font-size: 16px;
+}
+
+/* Form */
+
+input {
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+input[type=radio],
+input[type="date"] {
+  width: auto;
+}
+
+input[type=radio] {
+  margin-right: 4px;
+}
+
+select {
+  border: 0px;
+  outline: 0px;
   font-size: 16px;
 }

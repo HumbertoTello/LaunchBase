@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Desafio 4-2: Header</title>
+  </head>
+  <body>
+    <header>
+      <div class="links">
+        <a href="/">Teachers</a>
+        <a href="/">Students</a>
+      </div>
+    </header>
+
+    <form class="cards" method="POST" action="/teachers">
+      <section class="photo" style="background: url(https://source.unsplash.com/collection/8874679/500x500) no-repeat center center / cover"></section>
+      <section class="details">
+        <h3>Detalhes</h3>
+
+        <div class="item">
+          <div>Imagem</div>
+          <div>
+            <input type="url" name="avatar_url" placeholder="http://">
+          </div>
+        </div>
+        
+        <div class="item">
+          <div>Nome</div>
+          <div>
+            <input type="text" name="name" placeholder="Nome do professor">
+          </div>
+        </div>
+
+        <div class="item">
+          <div>Data de nascimento</div>
+          <div>
+            <input type="date" name="birth">
+          </div>
+        </div>
+
+        <div class="item">
+          <div>Graude escolaridade</div>
+          <div>
+            <select name="degree">
+              <option value="highSchool">Ensino Médio Completo</option>
+              <option value="higherSchool">Ensino Superior Completo</option>
+              <option value="master">Mestrado</option>
+              <option value="doctorate">Doutorado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="item">
+          <div>Acompanhamento</div>
+          <div>
+            <span><input type="radio" name="classType" value="physical">Presencial</span>
+            <span><input type="radio" name="classType" value="online">À distância</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div>Área de atuação</div>
+          <div>
+            <input type="text" name="subject" placeholder="Matérias que pode lecionar">
+          </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </section>
+    </div>
+  </body>
+</html>
