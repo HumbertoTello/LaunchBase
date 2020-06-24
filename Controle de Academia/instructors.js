@@ -1,6 +1,18 @@
 const fs = require('fs') // File system node
 const data = require('./data.json')
 
+//show
+exports.show = function (req, res) {
+  const { id } = req.params
+  const foundInstructor = data.instructors.find(function(instructor) {
+    return instructor.id == id
+  })
+
+  if (!foundInstructor) return res.send("Instructor not found")
+
+  return res.send(foundInstructor)
+}
+
 // create
 exports.post = function(req,res) {
   const keys = Object.keys(req.body)
