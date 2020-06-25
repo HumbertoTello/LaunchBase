@@ -1,6 +1,6 @@
 const fs = require('fs') // File system node
 const data = require('./data.json')
-const { age } = require('./utils')
+const { age, date } = require('./utils')
 
 //show
 exports.show = function (req, res) {
@@ -77,7 +77,16 @@ exports.edit = function(req, res) {
 
   if (!foundInstructor) return res.send("Instructor not found")  
 
-  return res.render('instructors/edit', { instructor: foundInstructor })
+  // instructor.birth = 1278471289724 = standard
+  // convert: date(instructor.birth)
+  // return yyyy-mm-dd
+
+  const instructor = {
+    ...foundInstructor,
+    birth: date(foundInstructor.birth)
+  }
+
+  return res.render('instructors/edit', { instructor })
 }
 
 // delete
