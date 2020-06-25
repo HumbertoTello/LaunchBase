@@ -1,57 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Desafio 4-2: Header</title>
-  </head>
-  <body>
-    <header>
-      <div class="links">
-        <a href="/">Teachers</a>
-        <a href="/">Students</a>
+{% extends "teachers/layout.njk" %}
+
+{% block content %}
+  <div class="cards">
+    <section class="photo" style="background: url(https://source.unsplash.com/collection/8874679/500x500) no-repeat center center / cover"></section>
+    <section class="details">
+      <h3>Detalhes</h3>
+
+      <div class="item">
+        <div>Nome</div>
+        <div>Cinthia Brandão</div>
       </div>
-    </header>
 
-    <div class="cards">
-      <section class="photo" style="background: url(https://source.unsplash.com/collection/8874679/500x500) no-repeat center center / cover"></section>
-      <section class="details">
-        <h3>Detalhes</h3>
-        
-        <div class="item">
-          <div>Nome</div>
-          <div>Cinthia Brandão</div>
-        </div>
+      <div class="item">
+        <div>Idade</div>
+        <div>26</div>
+      </div>
 
-        <div class="item">
-          <div>Idade</div>
-          <div>26</div>
-        </div>
+      <div class="item">
+        <div>Graude escolaridade</div>
+        <div>Mestrado</div>
+      </div>
 
-        <div class="item">
-          <div>Graude escolaridade</div>
-          <div>Mestrado</div>
-        </div>
+      <div class="item">
+        <div>Tipo de aula</div>
+        <div>À distância</div>
+      </div>
 
-        <div class="item">
-          <div>Tipo de aula</div>
-          <div>À distância</div>
+      <div class="item">
+        <div>Acompanhamento</div>
+        <div>
+          <span>Português</span>
+          <span>História</span>
         </div>
+      </div>
 
-        <div class="item">
-          <div>Acompanhamento</div>
-          <div>
-            <span>Português</span>
-            <span>História</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <div>Desde</div>
-          <div>02/06/2020</div>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+      <div class="item">
+        <div>Desde</div>
+        <div>02/06/2020</div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

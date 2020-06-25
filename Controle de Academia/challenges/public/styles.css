@@ -120,6 +120,7 @@ header {
   color: var(--secundary-color);
 }
 
+button,
 .details .item span {
   background-color: var(--secundary-color);
   border-radius: 16px;
@@ -154,4 +155,15 @@ select {
   border: 0px;
   outline: 0px;
   font-size: 16px;
+}
+
+button {
+  margin: 0 auto;
+  margin-top: 24px;
+  display: block;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 8px;
+  background-color: var(--secundary-color);
+  border-radius: 16px;
 }
