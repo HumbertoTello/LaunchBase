@@ -2,6 +2,11 @@ const fs = require('fs') // File system node
 const data = require('./data.json')
 const { age, date } = require('./utils')
 
+exports.index =  function(req,res) {
+
+  return res.render("instructors/index", { instructors: data.instructors })
+}
+
 //show
 exports.show = function (req, res) {
   const { id } = req.params
