@@ -1,8 +1,12 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "birth": null
+      "id": "1",
+      "birth": 0,
+      "avatar_url": "",
+      "name": "Oi",
+      "degree": "highSchool",
+      "subject": ""
     },
     {
       "id": 2,
@@ -129,16 +133,6 @@
       "classType": "physical",
       "subject": "Matemática, Geografia",
       "created_at": 1593091496568
-    },
-    {
-      "id": 17,
-      "avatar_url": "https://source.unsplash.com/collection/8874679/500x500",
-      "name": "Cláudia",
-      "birth": 399859200000,
-      "degree": "doctorate",
-      "classType": "online",
-      "subject": "Matemática, Física",
-      "created_at": 1593093308446
     }
   ]
 }
