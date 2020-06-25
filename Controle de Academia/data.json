@@ -6,7 +6,7 @@
       "created_at": 1592943094117,
       "id": 1,
       "gender": "M",
-      "services": "a",
+      "services": "musculação, crossfit, natação",
       "name": "a"
     },
     {
@@ -26,6 +26,15 @@
       "gender": "F",
       "services": "a",
       "created_at": 1592943323186
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://teste",
+      "name": "Teste",
+      "birth": 1593043200000,
+      "gender": "F",
+      "services": "teste",
+      "created_at": 1593000114718
     }
   ]
 }
