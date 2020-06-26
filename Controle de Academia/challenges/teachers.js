@@ -3,6 +3,10 @@ const data = require('./data.json')
 const { timeStamp } = require('console')
 const { age, date } = require('./utils')
 
+exports.index = function(req, res) {
+  return res.render("teachers/index", { teachers: data.teachers })
+}
+
 exports.post = function(req, res) {
   const keys = Object.keys(req.body)
 
