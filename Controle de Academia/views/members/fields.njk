@@ -15,7 +15,7 @@
 <div class="item">
   <div>Email</div>
   <div>
-    <input type="email" name="email" value="{{ member.name }}">
+    <input type="email" name="email" value="{{ member.email }}">
   </div>
 </div>
 
@@ -39,35 +39,35 @@
   <div>
     <select name="blood">
       <option value="A+"
-        {% if member.blood == "A+"%}selected{%endif%}%}>
+        {% if member.blood == "A+"%}selected{%endif%}>
           A+
       </option>
       <option value="A-"
-        {% if member.blood == "A-"%}selected{%endif%}%}>
+        {% if member.blood == "A-"%}selected{%endif%}>
           A-
       </option>
       <option value="B+"
-        {% if member.blood == "B+"%}selected{%endif%}%}>
+        {% if member.blood == "B+"%}selected{%endif%}>
           B+
       </option>
       <option value="B-"
-        {% if member.blood == "B-"%}selected{%endif%}%}>
+        {% if member.blood == "B-"%}selected{%endif%}>
           B-
       </option>
       <option value="AB+"
-        {% if member.blood == "AB+"%}selected{%endif%}%}>
+        {% if member.blood == "AB+"%}selected{%endif%}>
           AB+
-      +</option>
+      </option>
       <option value="AB-"
-        {% if member.blood == "AB-"%}selected{%endif%}%}>
+        {% if member.blood == "AB-"%}selected{%endif%}>
           AB-
-      -</option>
+      </option>
       <option value="O+"
-        {% if member.blood == "O+"%}selected{%endif%}%}>
+        {% if member.blood == "O+"%}selected{%endif%}>
           O+
       </option>
       <option value="O-"
-        {% if member.blood == "O-"%}selected{%endif%}%}>
+        {% if member.blood == "O-"%}selected{%endif%}>
           O-
       </option>
     </select>
@@ -84,7 +84,7 @@
 <div class="item">
   <div>Altura (cm)</div>
   <div>
-    <input type="number" name="height" value="{{ member.weight }}">
+    <input type="number" name="height" value="{{ member.height }}">
   </div>
 </div>
 
