@@ -1,10 +1,14 @@
 const fs = require('fs')
-const data = require('./data.json')
+const data = require('../data.json')
 const { timeStamp } = require('console')
-const { age, date } = require('./utils')
+const { age, date } = require('../utils')
 
 exports.index = function(req, res) {
   return res.render("teachers/index", { teachers: data.teachers })
+}
+
+exports.create = function(req, res) {
+  return res.render("teachers/forms")
 }
 
 exports.post = function(req, res) {
@@ -54,7 +58,7 @@ exports.show = function(req, res) {
     ...foundTeacher,
     subject: foundTeacher.subject.split(','),
     created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
-    birth: age(foundTeacher.birth)
+    birth: date(foundTeacher.birth).iso
   }
 
   return res.render("teachers/show", { teacher })
@@ -71,7 +75,7 @@ exports.edit = function(req, res) {
 
   const teacher = {
     ...foundTeacher,
-    birth: date(foundTeacher.birth)
+    birth: date(foundTeacher.birth).iso
   }
 
   return res.render('teachers/edit', { teacher })

@@ -1,4 +1,4 @@
-{% extends "teachers/layout.njk" %}
+{% extends "layout.njk" %}
 
 {% block content %}
   <div class="card">
@@ -47,6 +47,8 @@
         <div>Desde</div>
         <div>{{ teacher.created_at }}</div>
       </div>
+
+      <button onclick="location.href='{{ teacher.id }}/edit'" type="button">Editar</button>
     </section>
   </div>
 {% endblock %}
