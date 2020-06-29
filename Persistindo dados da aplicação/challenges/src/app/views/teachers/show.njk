@@ -13,31 +13,31 @@
 
       <div class="item">
         <div>Idade</div>
-        <div>{{ teacher.birth }}</div>
+        <div>{{ teacher.birth_date }}</div>
       </div>
 
       <div class="item">
         <div>Graude escolaridade</div>
         <div>
-          {{ "Ensino Médio Completo" if teacher.degree == "highSchool" }}
-          {{ "Ensino Superior Completo" if teacher.degree == "higherSchool" }}
-          {{ "Mestre" if teacher.degree == "master" }}
-          {{ "Doutor" if teacher.degree == "doctorate" }}
+          {{ "Ensino Médio Completo" if teacher.education_level == "highSchool" }}
+          {{ "Ensino Superior Completo" if teacher.education_level == "higherSchool" }}
+          {{ "Mestre" if teacher.education_level == "master" }}
+          {{ "Doutor" if teacher.education_level == "doctorate" }}
         </div>
       </div>
 
       <div class="item">
         <div>Tipo de aula</div>
         <div>
-          {{ "Presencial" if teacher.classType == "physical" }}
-          {{ "À distância" if teacher.classType == "online" }}
+          {{ "Presencial" if teacher.class_type == "physical" }}
+          {{ "À distância" if teacher.class_type == "online" }}
         </div>
       </div>
 
       <div class="item">
         <div>Acompanhamento</div>
         <div>
-          {% for subject in teacher.subject %}
+          {% for subject in teacher.subjects_taught %}
             <span>{{ subject }}</span>
           {% endfor %}
         </div>

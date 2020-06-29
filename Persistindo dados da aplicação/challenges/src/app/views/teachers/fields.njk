@@ -15,18 +15,18 @@
 <div class="item">
   <div>Data de nascimento</div>
   <div>
-    <input type="date" name="birth" value="{{ teacher.birth }}">
+    <input type="date" name="birth_date" value="{{ teacher.birth_date }}">
   </div>
 </div>
 
 <div class="item">
   <div>Graude escolaridade</div>
   <div>
-    <select name="degree">
-      <option value="highSchool" {% if teacher.degree == "highSchool" %} selected="selected" {% endif %}>Ensino Médio Completo</option>
-      <option value="higherSchool" {% if teacher.degree == "higherSchool" %} selected="selected" {% endif %}>Ensino Superior Completo</option>
-      <option value="master" {% if teacher.degree == "master" %} selected="selected" {% endif %}>Mestrado</option>
-      <option value="doctorate" {% if teacher.degree == "doctorate" %} selected="selected" {% endif %}>Doutorado</option>
+    <select name="education_level">
+      <option value="highSchool" {% if teacher.education_level == "highSchool" %} selected="selected" {% endif %}>Ensino Médio Completo</option>
+      <option value="higherSchool" {% if teacher.education_level == "higherSchool" %} selected="selected" {% endif %}>Ensino Superior Completo</option>
+      <option value="master" {% if teacher.education_level == "master" %} selected="selected" {% endif %}>Mestrado</option>
+      <option value="doctorate" {% if teacher.education_level == "doctorate" %} selected="selected" {% endif %}>Doutorado</option>
     </select>
   </div>
 </div>
@@ -34,15 +34,15 @@
 <div class="item">
   <div>Acompanhamento</div>
   <div>
-    <span><input type="radio" name="classType" value="physical" {% if teacher.classType == "physical" %} checked="checked" {% endif %}>Presencial</span>
-    <span><input type="radio" name="classType" value="online" {% if teacher.classType == "online" %} checked="checked" {% endif %}>À distância</span>
+    <span><input type="radio" name="class_type" value="physical" {% if teacher.class_type == "physical" %} checked="checked" {% endif %}>Presencial</span>
+    <span><input type="radio" name="class_type" value="online" {% if teacher.class_type == "online" %} checked="checked" {% endif %}>À distância</span>
   </div>
 </div>
 
 <div class="item">
   <div>Área de atuação</div>
   <div>
-    <input type="text" name="subject" placeholder="Matérias que pode lecionar" value="{{ teacher.subject }}">
+    <input type="text" name="subjects_taught" placeholder="Matérias que pode lecionar" value="{{ teacher.subjects_taught }}">
   </div>
 </div>
 

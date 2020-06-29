@@ -1,8 +1,12 @@
 const { age, date } = require('../../lib/utils')
+const Student = require('../models/Student')
 
 module.exports = {
   index(req, res){
-    return res.render("students/index")
+    
+    Student.all(function(students) {
+      return res.render("students/index", { students })
+    })
   },
   create(req, res){
     return res.render("students/forms")
@@ -15,16 +19,28 @@ module.exports = {
         return res.send("Please, fill all fields")
       }
     }
-  
-    let {avatar_url, name, birth, degree, classType, subject} = req.body
 
-    return
+    Student.create(req.body, function(student) {
+      return res.redirect(`/students/${student.id}`)
+    })
   },
   show(req, res){
-    return
+    Student.find(req.params.id, function(student) {
+      if(!student) return res.send("Instructor not found!")
+
+      student.birth = date(student.birth).birthDay
+
+      return res.render("students/show", { student })
+    })
   },
   edit(req, res){
-    return
+    Student.find(req.params.id, function(student) {
+      if (!student) return res.send("Student not found!")
+
+      student.birth = date(student.birth).iso
+
+      return res.render("students/edit", { student })
+    })
   },
   put(req, res){
     const keys = Object.keys(req.body)
@@ -35,9 +51,13 @@ module.exports = {
       }
     }
 
-    return
+    Student.update(req.body, function() {
+      return res.redirect(`/students/${req.body.id}`)
+    })
   },
   delete(req, res){
-    return
+    Student.delete(req.body.id, function() {
+      return res.redirect(`/students`)
+    })
   }
 }
