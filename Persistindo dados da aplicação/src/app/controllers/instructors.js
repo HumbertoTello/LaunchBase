@@ -1,5 +1,6 @@
 const { age, date } = require('../../lib/utils')
 const Instructor = require('../models/Instructor')
+const db = require('../../config/db')
 
 module.exports = {
   // index, 
@@ -70,7 +71,9 @@ module.exports = {
       return res.redirect(`/instructors/${req.body.id}`)
     })
   },
-  delete(req, res) {
-    return
+  delete(req, res){
+    Instructor.delete(req.body.id, function() {
+      return res.redirect(`/instructors`)
+    })
   }
 }
