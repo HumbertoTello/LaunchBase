@@ -8,8 +8,8 @@ module.exports = {
       FROM instructors
       LEFT JOIN members ON (instructors.id = members.instructor_id) 
       GROUP BY instructors.id
-      ORDER BY total_students DESC`, function(err, results) {
-      if(err) throw `Database error! ${err}`
+      ORDER BY total_students DESC`, function (err, results) {
+      if (err) throw `Database error! ${err}`
 
       callback(results.rows)
     })
@@ -32,21 +32,35 @@ module.exports = {
       data.gender,
       data.services,
       date(data.birth).iso,
-      date(Date.now()).iso, 
+      date(Date.now()).iso,
     ]
-  
-    db.query(query, values, function(err, results){
-      if(err) throw `Database error! ${err}`
+
+    db.query(query, values, function (err, results) {
+      if (err) throw `Database error! ${err}`
       callback(results.rows[0])
-    }) 
+    })
   },
   find(id, callback) {
     db.query(`
       SELECT *
       FROM instructors 
-      WHERE id = $1`, [id], function(err, results) {
-        if(err) throw `Database error! ${err}`
-        callback(results.rows[0])
+      WHERE id = $1`, [id], function (err, results) {
+      if (err) throw `Database error! ${err}`
+      callback(results.rows[0])
+    })
+  },
+  findBy(filter, callback) {
+    db.query(`
+    SELECT instructors.*, count(members) AS total_students
+    FROM instructors
+    LEFT JOIN members ON (instructors.id = members.instructor_id)
+    WHERE instructors.name ILIKE '%${filter}%'
+    OR instructors.services ILIKE '%${filter}%'
+    GROUP BY instructors.id
+    ORDER BY total_students DESC`, function (err, results) {
+      if (err) throw `Database error! ${err}`
+
+      callback(results.rows)
     })
   },
   update(data, callback) {
@@ -69,15 +83,15 @@ module.exports = {
       data.id
     ]
 
-    db.query(query, values, function(err, results) {
-      if(err) throw `Database error! ${err}`
+    db.query(query, values, function (err, results) {
+      if (err) throw `Database error! ${err}`
 
       callback()
     })
   },
   delete(id, callback) {
-    db.query(`DELETE FROM instructors WHERE id = $1`, [id], function(err, results) {
-      if(err) throw `Database error! ${err}`
+    db.query(`DELETE FROM instructors WHERE id = $1`, [id], function (err, results) {
+      if (err) throw `Database error! ${err}`
 
       return callback()
     })

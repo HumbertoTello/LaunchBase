@@ -18,6 +18,6 @@ nunjucks.configure("src/app/views", {
   noCache: true
 })
 
-server.listen("5010", function () {
+server.listen("5023", function () {
   //console.log("Server is running")
 })
