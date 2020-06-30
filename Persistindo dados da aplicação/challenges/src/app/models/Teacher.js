@@ -46,6 +46,17 @@ module.exports = {
         callback(results.rows[0])
       })
   },
+  findBy(filter, callback) {
+    db.query(`
+      SELECT teachers.*
+      FROM teachers
+      WHERE teachers.name ILIKE '%${filter}%'
+      OR teachers.subjects_taught ILIKE '%${filter}%'`, function(err, results) {
+        if (err) throw `Database error! ${err}`
+
+        callback(results.rows)
+      })
+  },
   update(data, callback) {
     const query = `
       UPDATE teachers SET

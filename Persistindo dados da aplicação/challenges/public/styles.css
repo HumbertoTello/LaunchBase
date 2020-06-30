@@ -162,6 +162,7 @@ select {
   font-size: 16px;
 }
 
+.button,
 button {
   margin: 0 auto;
   margin-top: 24px;
@@ -251,4 +252,41 @@ tbody tr td:last-child a{
   border-radius: 4px;
   font-weight: bold;
   box-shadow: 2px 3px 5px -4px black;
+}
+
+/* Header - Teacher */
+.card.table-container .header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.header form {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.header form input {
+  border: 1px solid grey;
+  padding: 7px 8px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.header .button,
+.header form button[type="submit"]{
+  margin: 0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header .button {
+  width: fit-content;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
 }
