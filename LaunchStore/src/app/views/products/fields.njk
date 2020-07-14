@@ -22,9 +22,7 @@
 <div class="item">
   <div>Descrição</div>
   <div>
-    <textarea name="description">
-      {{ product.description }}
-    </textarea>
+    <textarea name="description">{{ product.description }}</textarea>
   </div>
 </div>
 
@@ -48,12 +46,12 @@
   </div>
 </div>
 
-{% if product.status %}
+{% if (product.status == "1") or (product.status == "0") %}
 <div class="item">
   <div>Disponibilidade</div>
   <div>
-    <span><input type="radio" name="status" value="1" {% if member.gender=='1' %} checked="checked" {% endif %}>Sim</span>
-    <span><input type="radio" name="status" value="0" {% if member.gender=='0'%} checked="checked" {% endif %}>Não</span>
+    <span><input type="radio" name="status" value="1" {% if product.status=='1' %} checked="checked" {% endif %}>Sim</span>
+    <span><input type="radio" name="status" value="0" {% if product.status=='0'%} checked="checked" {% endif %}>Não</span>
   </div>
 </div>
 {% endif %}

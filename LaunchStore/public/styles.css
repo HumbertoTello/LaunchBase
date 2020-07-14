@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #FD951F;
-  --secundary-color: #1FD4FD;
+  --secundary-color: #1F83FD;
 }
 
 * {
@@ -56,6 +56,22 @@ body {
 
 .button:hover {
   background-color: #D7780B;
+}
+
+.button.edit {
+  background-color: var(--secundary-color);
+}
+
+.button.delete {
+  background-color: lightgrey;
+}
+
+.button.edit:hover {
+  background-color: #065AC1;
+}
+
+.button.delete:hover {
+  background-color: lightcoral;
 }
 
 /* Header */
@@ -196,3 +212,22 @@ form .item textarea {
 form .fields {
   margin-bottom: 64px;
 }
+
+form .item span {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  color: white;
+  margin-right: 4px;
+  margin-top: 8px;
+  display: inline-flex;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  align-items: center;
+}
+
+form .item input[type=radio] {
+  margin-right: 4px;
+}
+
