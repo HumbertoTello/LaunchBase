@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="about.css">
+{% endblock %}
+
+{% block content %}
+    <section class="content">
+
+      <div id="wrapper">
+        <img src="{{ info.img_url }}" alt="Rocketseat logo">
+        <h1>{{ info.name }}</h1>
+        <h2>{{ info.description }}</h2>
+        <h3>{{ info.technologies_title }}</h3>
+      </div>
+
+      <div id="technologies">
+        <ul>
+          {% for technologie in info.technologies_names %}
+            <li>{{ technologie }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+{% endblock %}
