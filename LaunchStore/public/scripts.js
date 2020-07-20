@@ -13,3 +13,37 @@ const Mask = {
     }).format(value/100)
   }
 }
+
+const PhotosUpload = {
+  uploadLimit: 6,
+  handleFileInput(event) {
+    const { files: fileList } = event.target
+    const { uploadLimit } = PhotosUpload
+
+    if (fileList.length > uploadLimit) {
+      alert(`Envie no máximo ${uploadLimit} arquivos`)
+      event.preventDefault()
+      return
+    }
+
+    Array.from(fileList).forEach (file => {
+      const reader = new FileReader()
+
+      reader.onload = () => {
+        const image = new Image()
+        image.src = String(reader.result)
+
+        const container = document.createElement("div")
+        container.classList.add("photo")
+
+        container.onclick = () => alert("Remover foto")
+        
+        container.appendChild(image)
+
+        document.querySelector("#photos-preview").appendChild(container)
+      }
+
+      reader.readAsDataURL(file)
+    })
+  }
+}
