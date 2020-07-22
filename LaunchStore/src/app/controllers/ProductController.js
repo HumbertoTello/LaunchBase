@@ -45,18 +45,38 @@ module.exports = {
     product.old_price = formatPrice(product.old_price)
     product.price = formatPrice(product.price)
 
+    // get categories
     results = await Category.all()
     const categories = results.rows
+    
+    // get images
+    results = await Product.files(product.id)
+    let files = results.rows
+    files = files.map(file => ({ // ({}) retorna diretamente o objeto
+      ...file,
+      src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}` // req.protocol (http ou https) // req.header.host (endereço completo localhost:3000)
+    }))
 
-    return res.render("products/edit.njk", { product, categories })
+    return res.render("products/edit.njk", { product, categories, files })
   },
   async put(req, res) {
     const keys = Object.keys(req.body)
 
     for (key of keys) {
-      if(req.body[key] == "") {
+      if(req.body[key] == "" && key != "removed_files") {
         return res.send("Please, fill all fields")
       }
+    }
+
+    if (req.body.removed_files) {
+      // 1,2,3 -> [1,2,3,]
+      const removedFiles = req.body.removed_files.split(",")
+      const lastIndex = removedFiles.length - 1
+      removedFiles.splice(lastIndex, 1) // [1,2,3]
+
+      const removedFilesPromise = removedFiles.map(id => File.delete(id))
+
+      await Promise.all(removedFiles)
     }
 
     req.body.price = req.body.price.replace(/\D/g, "")
