@@ -21,13 +21,17 @@ module.exports = {
   },
   async delete(id) {
 
-    const result = await db.query(`SELECT * FROM files WHERE id = $id`, [id])
-    const file = result.rows[0]
+    try {
+      const result = await db.query(`SELECT * FROM files WHERE id = $1`, [id])
+      const file = result.rows[0]
+  
+      fs.unlinkSync(file.path) //deletar as imagens da public
 
-    fs.unlinkSync(file.path) //deletar as imagens da public
-
-    return db.query(`
+      return db.query(`
       DELETE FROM files WHERE id = $1
-    `, [id])
+      `, [id])
+    } catch(err) {
+      console.error(err)
+    }
   }
 }
