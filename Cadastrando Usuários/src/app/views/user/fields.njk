@@ -5,7 +5,8 @@
       type="text" 
       name="name" 
       placeholder="Digite o título do anúncio" 
-      value="{{ user.name }}">
+      value="{{ user.name }}"
+      required>
   </div>
 </div>
 
@@ -56,7 +57,8 @@
       name="cpf_cnpj" 
       placeholder="Digite o seu documento" 
       value="{{ user.cpf_cnpj }}"
-      onkeydown="Mask.apply(this, 'cpfCnpj')">
+      onkeydown="Mask.apply(this, 'cpfCnpj')"
+      onblur="Validate.apply(this, 'isCpfCnpj')">
   </div>
 </div>
 
@@ -68,7 +70,8 @@
       name="cep" 
       placeholder="99999-999" 
       value="{{ user.cep }}"
-      onkeydown="Mask.apply(this, 'cep')">      
+      onkeydown="Mask.apply(this, 'cep')"
+      onblur="Validate.apply(this, 'isCep')">
   </div>
 </div>
 
