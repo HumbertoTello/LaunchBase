@@ -6,7 +6,10 @@ async function post(req, res, next) {
 
   for (key of keys) {
     if(req.body[key] == "") {
-      return res.send("Please, fill all fields")
+      return res.render('user/register', {
+        user: req.body,
+        error: 'Por favor, preencha todos os campos'
+      })
     }
   }
 
@@ -25,8 +28,10 @@ async function post(req, res, next) {
   })
 
   //check if password match
-  if (password != passwordRepeat)
-    return res.send('Password mismatch')
+  if (password != passwordRepeat) return res.render('user/register', {
+    user: req.body,
+    error: 'As senhas não conferem.'
+  })
   
   next()
 }
