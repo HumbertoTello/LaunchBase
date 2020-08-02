@@ -1,3 +1,8 @@
+module.exports = {
+  registerForm(req, res) {
+    return res.render("user/register")
+  }
+}
 // class Person {
 //   getName() {
 //     return this.name
