@@ -53,7 +53,8 @@
       type="text" 
       name="cpf_cnpj" 
       placeholder="Digite o seu documento" 
-      value="{{ user.cpf_cnpj }}">
+      value="{{ user.cpf_cnpj }}"
+      onkeydown="Mask.apply(this, 'cpfCnpj')">
   </div>
 </div>
 
@@ -64,7 +65,8 @@
       type="text" 
       name="cep" 
       placeholder="99999-999" 
-      value="{{ user.cep }}">
+      value="{{ user.cep }}"
+      onkeydown="Mask.apply(this, 'cep')">      
   </div>
 </div>
 
