@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  background: #6633cc;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+header div {
+  text-align: center;
+}
+
+header div a {
+  color: white;
+  margin: 0 30px;
+  text-decoration: initial;
+}
+
+header div a:hover {
+  color: rgb(197, 194, 194);
+  transition: 300ms
+}
+
+.course {
+  margin: 120px auto;
+  text-align: center;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px;
+}
+
+.wrapper  {
+  min-height: 100vh;
+}
+
+.card {
+  background-color: black;
+  border-radius: 20px;
+  padding: 20px 0;
+  color: white;
+}
+
+.course-modules {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.disponibility {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.links {
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.links a {
+  padding: 2px;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid black;
+}
+
+.links a:hover {
+  border-bottom: 2px solid white;
+  transition: 400ms;
+}
+
+#footer {
+  padding-top: 25px;
+  height: 55px;
+  width: 100%;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  visibility: hidden;
+}
+
+.modal {
+  background-color: white;
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: 0px;
+  margin: 5vh auto;
+  opacity: 1;
+}
+
+.close-modal {
+  color: black;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.maximize-modal {
+  color: black;
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.modal-overlay.active{
+  visibility: visible;
+  opacity: 1;
+}
+
+iframe {
+  width: 99%;
+  height: 90%;
+  top: 6%;
+  position: absolute;
+}
+
+.course-alone {
+  margin: 80px auto;
+  text-align: center;
+  width: 40%;
+}
+
+.course-alone__description {
+  margin: 40px auto;
+  width: 80%;
+  color: white;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding-top: 3%;
+  height: 64px;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.links-footer {
+  text-align: center;
+}
