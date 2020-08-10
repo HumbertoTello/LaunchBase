@@ -1,5 +1,5 @@
 const User = require('../models/User')
-const { compare } = require('bycriptjs')
+const { compare } = require('bcryptjs')
 
 function checkAllFields(body) {
   const keys = Object.keys(body)
