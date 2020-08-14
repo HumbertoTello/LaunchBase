@@ -7,14 +7,15 @@ const UserController = require('../app/controllers/UserController')
 const Validator = require('../app/validators/user')
 
 // // login / logout
-// routes.get('/users/login', SessionController.loginForm)
-// routes.post('/users/login', SessionController.login)
-// routes.post('/users/logout', SessionController.logout)
+// routes.get('/login', SessionController.loginForm)
+// routes.post('/login', SessionController.login)
+routes.post('/logout', SessionController.logout)
+
 // // reset password / forgot
-// routes.get('/users/forgot-password', SessionController.forgotForm)
-// routes.get('/users/password-reset', SessionController.resetForm)
-// routes.post('/users/forgot-password', SessionController.forgot)
-// routes.post('/users/password-reset', SessionController.reset)
+// routes.get('/forgot-password', SessionController.forgotForm)
+// routes.get('/password-reset', SessionController.resetForm)
+// routes.post('/forgot-password', SessionController.forgot)
+// routes.post('/password-reset', SessionController.reset)
 
 // // user register UserController
 routes.get('/register', UserController.registerForm)
