@@ -33,7 +33,9 @@ async function forgot(req, res, next) {
     if(!user) return res.render("session/forgot-password", {
       user: req.body,
       error: "Email não cadastrado!"
-    })  
+    })
+
+    res.user = user
 
     next()
   } catch(err) {
