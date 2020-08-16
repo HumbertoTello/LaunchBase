@@ -73,6 +73,7 @@ module.exports = {
     const { email, password, passwordRepeat, token } = req.body
 
     try {
+      /* VALIDAÇÃO */
       // procurar o usuário
 
       // ver se a senha bate
@@ -81,6 +82,7 @@ module.exports = {
 
       // verificar se o token não expirou
 
+      /* */
       // cria um novo hash de senha
 
       // atualiza o usuário
