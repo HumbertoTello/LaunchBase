@@ -1,4 +1,5 @@
 const crypto = require('crypto')
+
 const User = require('../models/User')
 const mailer = require('../../lib/mailer')
 
@@ -64,5 +65,11 @@ module.exports = {
         error: "Erro inesperado, tente novamente"
       })
     }
+  },
+  resetForm (req, res) {
+    return res.render("session/password-reset", { token: req.query.token })
+  },
+  reset (req, res) {
+    
   }
 }
